@@ -1,0 +1,5 @@
+classes= 52  
+train  = cards/train.txt  
+valid  = cards/test.txt  
+names = obj.names  
+backup = output/
