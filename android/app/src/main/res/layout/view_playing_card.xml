@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    tools:parentTag="android.support.constraint.ConstraintLayout"
+    >
+
+    <ImageView
+        android:id="@+id/ivCardBackground"
+        android:layout_width="88dp"
+        android:layout_height="128dp"
+        android:background="@drawable/card_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pbAccuracy"
+        tools:ignore="ContentDescription"
+        />
+
+    <ImageView
+        android:id="@+id/ivCard"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pbAccuracy"
+        tools:background="@drawable/two_of_clubs"
+        tools:ignore="ContentDescription"
+        />
+
+    <ProgressBar
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/pbAccuracy"
+        android:layout_marginTop="4dp"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:max="100"
+        app:layout_constraintLeft_toLeftOf="@id/ivCardBackground"
+        app:layout_constraintRight_toRightOf="@id/ivCardBackground"
+        app:layout_constraintTop_toBottomOf="@id/ivCardBackground"
+        app:layout_constraintBottom_toTopOf="@id/tvAccuracy"
+        tools:progress="80"
+        android:progressDrawable="@drawable/progress_background"
+        />
+
+    <TextView
+        android:id="@+id/tvAccuracy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="80%"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ivCardBackground"
+        app:layout_constraintRight_toRightOf="@id/ivCardBackground"
+        app:layout_constraintTop_toBottomOf="@id/pbAccuracy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</merge>

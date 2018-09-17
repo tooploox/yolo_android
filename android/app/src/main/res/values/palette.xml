@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tundora">#4A4A4A</color>
+    <color name="yellow_sea">#FCAC00</color>
+    <color name="eucalyptus">#1e9e4f</color>
+    <color name="genoa">#1c7e62</color>
+    <color name="white">#ffffff</color>
+    <color name="mountain_meadow">#1bca65</color>
+    <color name="key_lime_pie">#cac71b</color>
+    <color name="hot_cinnamon">#ca761b</color>
+
+</resources>
