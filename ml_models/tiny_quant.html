@@ -1,0 +1,1305 @@
+
+<html>
+<head>
+<style>
+body {font-family: sans-serif; background-color: #ffaa00;}
+table {background-color: #eeccaa;}
+th {background-color: black; color: white;}
+h1 {
+  background-color: ffaa00;
+  padding:5px;
+  color: black;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #ffeecc;
+  padding:5px;
+  margin:5px;
+}
+
+.tooltip {color: blue;}
+.tooltip .tooltipcontent  {
+    visibility: hidden;
+    color: black;
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltipcontent {
+    visibility: visible;
+}
+
+.edges line {
+  stroke: #333333;
+}
+
+.nodes text {
+  color: black;
+  pointer-events: none;
+  font-family: sans-serif;
+  font-size: 11px;
+}
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+<body>
+<h1>TensorFlow Lite Model</h2><table>
+<tr><th>filename</th><td>foo2.tflite</td></tr>
+<tr><th>version</th><td>3</td></tr>
+<tr><th>description</th><td>TOCO Converted.</td></tr>
+</table>
+<div class='subgraph'><h2>Subgraph 0</h2>
+<h3>Inputs/Outputs</h3>
+<table><tr>
+<tr>
+<th>inputs</th><th>outputs</th></tr>
+<tr>
+<td><span class='tooltip'><span class='tooltipcontent'>0  FLOAT32 [1, 416, 416, 3]<br></span>[0]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>84 output FLOAT32 []<br></span>[84]</span></td>
+</tr>
+</table>
+<h3>Tensors</h3>
+<table><tr>
+<tr>
+<th>index</th><th>name</th><th>type</th><th>shape</th><th>buffer</th><th>quantization</th></tr>
+<tr>
+<td>0</td><td></td>
+<td>FLOAT32</td>
+<td>[1, 416, 416, 3]</td>
+<td>61</td>
+<td>{u'max': [255.0], u'min': [0.0]}</td>
+</tr>
+<tr>
+<td>1</td><td>0-convolutional/filter</td>
+<td>FLOAT32</td>
+<td>[16, 3, 3, 3]</td>
+<td>85</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>2</td><td>0-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[16]</td>
+<td>84</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>3</td><td>1-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>68</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>4</td><td>10-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>67</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>5</td><td>11-maxpool</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>54</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>6</td><td>12-convolutional/filter</td>
+<td>UINT8</td>
+<td>[256, 3, 3, 128]</td>
+<td>37</td>
+<td>{u'scale': [0.004786], u'zero_point': [90]}</td>
+</tr>
+<tr>
+<td>7</td><td>12-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>82</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>8</td><td>12-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[256]</td>
+<td>9</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>9</td><td>13-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>19</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>10</td><td>14-maxpool</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>75</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>11</td><td>15-convolutional/filter</td>
+<td>UINT8</td>
+<td>[512, 3, 3, 256]</td>
+<td>48</td>
+<td>{u'scale': [0.004331], u'zero_point': [115]}</td>
+</tr>
+<tr>
+<td>12</td><td>15-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>4</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>13</td><td>15-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[512]</td>
+<td>8</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>14</td><td>16-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>15</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>15</td><td>17-maxpool</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>14</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>16</td><td>18-convolutional/filter</td>
+<td>UINT8</td>
+<td>[1024, 3, 3, 512]</td>
+<td>70</td>
+<td>{u'scale': [0.010209], u'zero_point': [132]}</td>
+</tr>
+<tr>
+<td>17</td><td>18-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>3</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>18</td><td>18-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[1024]</td>
+<td>77</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>19</td><td>19-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>34</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>20</td><td>2-maxpool</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>44</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>21</td><td>20-convolutional/filter</td>
+<td>UINT8</td>
+<td>[512, 3, 3, 1024]</td>
+<td>71</td>
+<td>{u'scale': [0.000385], u'zero_point': [124]}</td>
+</tr>
+<tr>
+<td>22</td><td>20-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>2</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>23</td><td>20-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[512]</td>
+<td>7</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>24</td><td>21-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>46</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>25</td><td>22-convolutional/filter</td>
+<td>UINT8</td>
+<td>[50, 1, 1, 512]</td>
+<td>49</td>
+<td>{u'scale': [0.002294], u'zero_point': [115]}</td>
+</tr>
+<tr>
+<td>26</td><td>22-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>1</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>27</td><td>22-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[50]</td>
+<td>6</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>28</td><td>3-convolutional/filter</td>
+<td>UINT8</td>
+<td>[32, 3, 3, 16]</td>
+<td>57</td>
+<td>{u'scale': [0.004715], u'zero_point': [127]}</td>
+</tr>
+<tr>
+<td>29</td><td>3-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>83</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>30</td><td>3-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[32]</td>
+<td>11</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>31</td><td>4-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>59</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>32</td><td>5-maxpool</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>35</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>33</td><td>6-convolutional/filter</td>
+<td>UINT8</td>
+<td>[64, 3, 3, 32]</td>
+<td>81</td>
+<td>{u'scale': [0.008749], u'zero_point': [94]}</td>
+</tr>
+<tr>
+<td>34</td><td>6-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>45</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>35</td><td>6-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[64]</td>
+<td>56</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>36</td><td>7-leaky</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>31</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>37</td><td>8-maxpool</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>38</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>38</td><td>9-convolutional/filter</td>
+<td>UINT8</td>
+<td>[128, 3, 3, 64]</td>
+<td>60</td>
+<td>{u'scale': [0.00439], u'zero_point': [115]}</td>
+</tr>
+<tr>
+<td>39</td><td>9-convolutional/filter_dequantized</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>5</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>40</td><td>9-convolutional_bias</td>
+<td>FLOAT32</td>
+<td>[128]</td>
+<td>10</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>41</td><td>BiasAdd</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>47</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>42</td><td>BiasAdd_1</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>73</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>43</td><td>BiasAdd_2</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>28</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>44</td><td>BiasAdd_3</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>25</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>45</td><td>BiasAdd_4</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>22</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>46</td><td>BiasAdd_5</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>17</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>47</td><td>BiasAdd_6</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>13</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>48</td><td>BiasAdd_7</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>12</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>49</td><td>Pad</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>64</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>50</td><td>Pad/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>63</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>51</td><td>Pad_1</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>43</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>52</td><td>Pad_1/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>76</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>53</td><td>Pad_2</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>41</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>54</td><td>Pad_2/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>69</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>55</td><td>Pad_3</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>30</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>56</td><td>Pad_3/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>66</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>57</td><td>Pad_4</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>23</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>58</td><td>Pad_4/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>53</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>59</td><td>Pad_5</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>18</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>60</td><td>Pad_5/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>62</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>61</td><td>Pad_6</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>51</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>62</td><td>Pad_6/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>55</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>63</td><td>Pad_7</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>27</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>64</td><td>Pad_7/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>29</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>65</td><td>Pad_8</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>20</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>66</td><td>Pad_8/paddings</td>
+<td>INT32</td>
+<td>[4, 2]</td>
+<td>79</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>67</td><td>input</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>33</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>68</td><td>mul_1</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>42</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>69</td><td>mul_1/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>80</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>70</td><td>mul_11</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>16</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>71</td><td>mul_11/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>36</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>72</td><td>mul_13</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>26</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>73</td><td>mul_13/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>52</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>74</td><td>mul_15</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>39</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>75</td><td>mul_15/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>50</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>76</td><td>mul_3</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>40</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>77</td><td>mul_3/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>78</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>78</td><td>mul_5</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>32</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>79</td><td>mul_5/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>72</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>80</td><td>mul_7</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>24</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>81</td><td>mul_7/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>58</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>82</td><td>mul_9</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>21</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>83</td><td>mul_9/x</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>74</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>84</td><td>output</td>
+<td>FLOAT32</td>
+<td>[]</td>
+<td>65</td>
+<td>{}</td>
+</tr>
+</table>
+<h3>Ops</h3>
+<table><tr>
+<tr>
+<th>index</th><th>inputs</th><th>outputs</th><th>builtin_options</th><th>opcode_index</th></tr>
+<tr>
+<td>0</td><td><span class='tooltip'><span class='tooltipcontent'>67 input FLOAT32 []<br>50 Pad/paddings INT32 [4, 2]<br></span>[67, 50]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>49 Pad FLOAT32 []<br></span>[49]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>1</td><td><span class='tooltip'><span class='tooltipcontent'>49 Pad FLOAT32 []<br>1 0-convolutional/filter FLOAT32 [16, 3, 3, 3]<br>2 0-convolutional_bias FLOAT32 [16]<br></span>[49, 1, 2]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>41 BiasAdd FLOAT32 []<br></span>[41]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>2</td><td><span class='tooltip'><span class='tooltipcontent'>69 mul_1/x FLOAT32 []<br>41 BiasAdd FLOAT32 []<br></span>[69, 41]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>68 mul_1 FLOAT32 []<br></span>[68]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>3</td><td><span class='tooltip'><span class='tooltipcontent'>68 mul_1 FLOAT32 []<br>41 BiasAdd FLOAT32 []<br></span>[68, 41]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>3 1-leaky FLOAT32 []<br></span>[3]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>4</td><td><span class='tooltip'><span class='tooltipcontent'>3 1-leaky FLOAT32 []<br></span>[3]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>20 2-maxpool FLOAT32 []<br></span>[20]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 2, u'padding': u'SAME', u'stride_w': 2, u'filter_height': 2, u'filter_width': 2}</td>
+<td>MAX_POOL_2D (opcode=2)</td>
+</tr>
+<tr>
+<td>5</td><td><span class='tooltip'><span class='tooltipcontent'>20 2-maxpool FLOAT32 []<br>52 Pad_1/paddings INT32 [4, 2]<br></span>[20, 52]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>51 Pad_1 FLOAT32 []<br></span>[51]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>6</td><td><span class='tooltip'><span class='tooltipcontent'>28 3-convolutional/filter UINT8 [32, 3, 3, 16]<br></span>[28]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>29 3-convolutional/filter_dequantized FLOAT32 []<br></span>[29]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>7</td><td><span class='tooltip'><span class='tooltipcontent'>51 Pad_1 FLOAT32 []<br>29 3-convolutional/filter_dequantized FLOAT32 []<br>30 3-convolutional_bias FLOAT32 [32]<br></span>[51, 29, 30]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>42 BiasAdd_1 FLOAT32 []<br></span>[42]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>8</td><td><span class='tooltip'><span class='tooltipcontent'>77 mul_3/x FLOAT32 []<br>42 BiasAdd_1 FLOAT32 []<br></span>[77, 42]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>76 mul_3 FLOAT32 []<br></span>[76]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>9</td><td><span class='tooltip'><span class='tooltipcontent'>76 mul_3 FLOAT32 []<br>42 BiasAdd_1 FLOAT32 []<br></span>[76, 42]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>31 4-leaky FLOAT32 []<br></span>[31]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>10</td><td><span class='tooltip'><span class='tooltipcontent'>31 4-leaky FLOAT32 []<br></span>[31]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>32 5-maxpool FLOAT32 []<br></span>[32]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 2, u'padding': u'SAME', u'stride_w': 2, u'filter_height': 2, u'filter_width': 2}</td>
+<td>MAX_POOL_2D (opcode=2)</td>
+</tr>
+<tr>
+<td>11</td><td><span class='tooltip'><span class='tooltipcontent'>32 5-maxpool FLOAT32 []<br>54 Pad_2/paddings INT32 [4, 2]<br></span>[32, 54]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>53 Pad_2 FLOAT32 []<br></span>[53]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>12</td><td><span class='tooltip'><span class='tooltipcontent'>33 6-convolutional/filter UINT8 [64, 3, 3, 32]<br></span>[33]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>34 6-convolutional/filter_dequantized FLOAT32 []<br></span>[34]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>13</td><td><span class='tooltip'><span class='tooltipcontent'>53 Pad_2 FLOAT32 []<br>34 6-convolutional/filter_dequantized FLOAT32 []<br>35 6-convolutional_bias FLOAT32 [64]<br></span>[53, 34, 35]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>43 BiasAdd_2 FLOAT32 []<br></span>[43]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>14</td><td><span class='tooltip'><span class='tooltipcontent'>79 mul_5/x FLOAT32 []<br>43 BiasAdd_2 FLOAT32 []<br></span>[79, 43]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>78 mul_5 FLOAT32 []<br></span>[78]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>15</td><td><span class='tooltip'><span class='tooltipcontent'>78 mul_5 FLOAT32 []<br>43 BiasAdd_2 FLOAT32 []<br></span>[78, 43]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>36 7-leaky FLOAT32 []<br></span>[36]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>16</td><td><span class='tooltip'><span class='tooltipcontent'>36 7-leaky FLOAT32 []<br></span>[36]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>37 8-maxpool FLOAT32 []<br></span>[37]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 2, u'padding': u'SAME', u'stride_w': 2, u'filter_height': 2, u'filter_width': 2}</td>
+<td>MAX_POOL_2D (opcode=2)</td>
+</tr>
+<tr>
+<td>17</td><td><span class='tooltip'><span class='tooltipcontent'>37 8-maxpool FLOAT32 []<br>56 Pad_3/paddings INT32 [4, 2]<br></span>[37, 56]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>55 Pad_3 FLOAT32 []<br></span>[55]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>18</td><td><span class='tooltip'><span class='tooltipcontent'>38 9-convolutional/filter UINT8 [128, 3, 3, 64]<br></span>[38]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>39 9-convolutional/filter_dequantized FLOAT32 []<br></span>[39]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>19</td><td><span class='tooltip'><span class='tooltipcontent'>55 Pad_3 FLOAT32 []<br>39 9-convolutional/filter_dequantized FLOAT32 []<br>40 9-convolutional_bias FLOAT32 [128]<br></span>[55, 39, 40]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>44 BiasAdd_3 FLOAT32 []<br></span>[44]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>20</td><td><span class='tooltip'><span class='tooltipcontent'>81 mul_7/x FLOAT32 []<br>44 BiasAdd_3 FLOAT32 []<br></span>[81, 44]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>80 mul_7 FLOAT32 []<br></span>[80]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>21</td><td><span class='tooltip'><span class='tooltipcontent'>80 mul_7 FLOAT32 []<br>44 BiasAdd_3 FLOAT32 []<br></span>[80, 44]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>4 10-leaky FLOAT32 []<br></span>[4]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>22</td><td><span class='tooltip'><span class='tooltipcontent'>4 10-leaky FLOAT32 []<br></span>[4]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>5 11-maxpool FLOAT32 []<br></span>[5]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 2, u'padding': u'SAME', u'stride_w': 2, u'filter_height': 2, u'filter_width': 2}</td>
+<td>MAX_POOL_2D (opcode=2)</td>
+</tr>
+<tr>
+<td>23</td><td><span class='tooltip'><span class='tooltipcontent'>5 11-maxpool FLOAT32 []<br>58 Pad_4/paddings INT32 [4, 2]<br></span>[5, 58]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>57 Pad_4 FLOAT32 []<br></span>[57]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>24</td><td><span class='tooltip'><span class='tooltipcontent'>6 12-convolutional/filter UINT8 [256, 3, 3, 128]<br></span>[6]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>7 12-convolutional/filter_dequantized FLOAT32 []<br></span>[7]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>25</td><td><span class='tooltip'><span class='tooltipcontent'>57 Pad_4 FLOAT32 []<br>7 12-convolutional/filter_dequantized FLOAT32 []<br>8 12-convolutional_bias FLOAT32 [256]<br></span>[57, 7, 8]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>45 BiasAdd_4 FLOAT32 []<br></span>[45]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>26</td><td><span class='tooltip'><span class='tooltipcontent'>83 mul_9/x FLOAT32 []<br>45 BiasAdd_4 FLOAT32 []<br></span>[83, 45]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>82 mul_9 FLOAT32 []<br></span>[82]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>27</td><td><span class='tooltip'><span class='tooltipcontent'>82 mul_9 FLOAT32 []<br>45 BiasAdd_4 FLOAT32 []<br></span>[82, 45]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>9 13-leaky FLOAT32 []<br></span>[9]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>28</td><td><span class='tooltip'><span class='tooltipcontent'>9 13-leaky FLOAT32 []<br></span>[9]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>10 14-maxpool FLOAT32 []<br></span>[10]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 2, u'padding': u'SAME', u'stride_w': 2, u'filter_height': 2, u'filter_width': 2}</td>
+<td>MAX_POOL_2D (opcode=2)</td>
+</tr>
+<tr>
+<td>29</td><td><span class='tooltip'><span class='tooltipcontent'>10 14-maxpool FLOAT32 []<br>60 Pad_5/paddings INT32 [4, 2]<br></span>[10, 60]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>59 Pad_5 FLOAT32 []<br></span>[59]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>30</td><td><span class='tooltip'><span class='tooltipcontent'>11 15-convolutional/filter UINT8 [512, 3, 3, 256]<br></span>[11]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>12 15-convolutional/filter_dequantized FLOAT32 []<br></span>[12]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>31</td><td><span class='tooltip'><span class='tooltipcontent'>59 Pad_5 FLOAT32 []<br>12 15-convolutional/filter_dequantized FLOAT32 []<br>13 15-convolutional_bias FLOAT32 [512]<br></span>[59, 12, 13]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>46 BiasAdd_5 FLOAT32 []<br></span>[46]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>32</td><td><span class='tooltip'><span class='tooltipcontent'>71 mul_11/x FLOAT32 []<br>46 BiasAdd_5 FLOAT32 []<br></span>[71, 46]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>70 mul_11 FLOAT32 []<br></span>[70]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>33</td><td><span class='tooltip'><span class='tooltipcontent'>70 mul_11 FLOAT32 []<br>46 BiasAdd_5 FLOAT32 []<br></span>[70, 46]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>14 16-leaky FLOAT32 []<br></span>[14]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>34</td><td><span class='tooltip'><span class='tooltipcontent'>14 16-leaky FLOAT32 []<br></span>[14]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>15 17-maxpool FLOAT32 []<br></span>[15]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'SAME', u'stride_w': 1, u'filter_height': 2, u'filter_width': 2}</td>
+<td>MAX_POOL_2D (opcode=2)</td>
+</tr>
+<tr>
+<td>35</td><td><span class='tooltip'><span class='tooltipcontent'>15 17-maxpool FLOAT32 []<br>62 Pad_6/paddings INT32 [4, 2]<br></span>[15, 62]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>61 Pad_6 FLOAT32 []<br></span>[61]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>36</td><td><span class='tooltip'><span class='tooltipcontent'>16 18-convolutional/filter UINT8 [1024, 3, 3, 512]<br></span>[16]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>17 18-convolutional/filter_dequantized FLOAT32 []<br></span>[17]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>37</td><td><span class='tooltip'><span class='tooltipcontent'>61 Pad_6 FLOAT32 []<br>17 18-convolutional/filter_dequantized FLOAT32 []<br>18 18-convolutional_bias FLOAT32 [1024]<br></span>[61, 17, 18]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>47 BiasAdd_6 FLOAT32 []<br></span>[47]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>38</td><td><span class='tooltip'><span class='tooltipcontent'>73 mul_13/x FLOAT32 []<br>47 BiasAdd_6 FLOAT32 []<br></span>[73, 47]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>72 mul_13 FLOAT32 []<br></span>[72]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>39</td><td><span class='tooltip'><span class='tooltipcontent'>72 mul_13 FLOAT32 []<br>47 BiasAdd_6 FLOAT32 []<br></span>[72, 47]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>19 19-leaky FLOAT32 []<br></span>[19]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>40</td><td><span class='tooltip'><span class='tooltipcontent'>19 19-leaky FLOAT32 []<br>64 Pad_7/paddings INT32 [4, 2]<br></span>[19, 64]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>63 Pad_7 FLOAT32 []<br></span>[63]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>41</td><td><span class='tooltip'><span class='tooltipcontent'>21 20-convolutional/filter UINT8 [512, 3, 3, 1024]<br></span>[21]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>22 20-convolutional/filter_dequantized FLOAT32 []<br></span>[22]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>42</td><td><span class='tooltip'><span class='tooltipcontent'>63 Pad_7 FLOAT32 []<br>22 20-convolutional/filter_dequantized FLOAT32 []<br>23 20-convolutional_bias FLOAT32 [512]<br></span>[63, 22, 23]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>48 BiasAdd_7 FLOAT32 []<br></span>[48]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+<tr>
+<td>43</td><td><span class='tooltip'><span class='tooltipcontent'>75 mul_15/x FLOAT32 []<br>48 BiasAdd_7 FLOAT32 []<br></span>[75, 48]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>74 mul_15 FLOAT32 []<br></span>[74]</span></td>
+<td>{u'fused_activation_function': u'NONE'}</td>
+<td>MUL (opcode=3)</td>
+</tr>
+<tr>
+<td>44</td><td><span class='tooltip'><span class='tooltipcontent'>74 mul_15 FLOAT32 []<br>48 BiasAdd_7 FLOAT32 []<br></span>[74, 48]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>24 21-leaky FLOAT32 []<br></span>[24]</span></td>
+<td>None</td>
+<td>MAXIMUM (opcode=5)</td>
+</tr>
+<tr>
+<td>45</td><td><span class='tooltip'><span class='tooltipcontent'>24 21-leaky FLOAT32 []<br>66 Pad_8/paddings INT32 [4, 2]<br></span>[24, 66]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>65 Pad_8 FLOAT32 []<br></span>[65]</span></td>
+<td>{}</td>
+<td>PAD (opcode=4)</td>
+</tr>
+<tr>
+<td>46</td><td><span class='tooltip'><span class='tooltipcontent'>25 22-convolutional/filter UINT8 [50, 1, 1, 512]<br></span>[25]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>26 22-convolutional/filter_dequantized FLOAT32 []<br></span>[26]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (opcode=1)</td>
+</tr>
+<tr>
+<td>47</td><td><span class='tooltip'><span class='tooltipcontent'>65 Pad_8 FLOAT32 []<br>26 22-convolutional/filter_dequantized FLOAT32 []<br>27 22-convolutional_bias FLOAT32 [50]<br></span>[65, 26, 27]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>84 output FLOAT32 []<br></span>[84]</span></td>
+<td>{u'fused_activation_function': u'NONE', u'stride_h': 1, u'padding': u'VALID', u'stride_w': 1, u'dilation_h_factor': 1, u'dilation_w_factor': 1}</td>
+<td>CONV_2D (opcode=0)</td>
+</tr>
+</table>
+<svg id='subgraph0' width='960' height='1600'></svg>
+
+  <script>
+    // Build graph data
+    var graph = {"nodes": [{"y": 0, "x": 50, "group": 2, "id": "o0", "name": "PAD (opcode=4)"}, {"y": 50, "x": 50, "group": 2, "id": "o1", "name": "CONV_2D (opcode=0)"}, {"y": 100, "x": 50, "group": 2, "id": "o2", "name": "MUL (opcode=3)"}, {"y": 150, "x": 50, "group": 2, "id": "o3", "name": "MAXIMUM (opcode=5)"}, {"y": 200, "x": 50, "group": 2, "id": "o4", "name": "MAX_POOL_2D (opcode=2)"}, {"y": 250, "x": 50, "group": 2, "id": "o5", "name": "PAD (opcode=4)"}, {"y": 300, "x": 50, "group": 2, "id": "o6", "name": "DEQUANTIZE (opcode=1)"}, {"y": 350, "x": 50, "group": 2, "id": "o7", "name": "CONV_2D (opcode=0)"}, {"y": 400, "x": 50, "group": 2, "id": "o8", "name": "MUL (opcode=3)"}, {"y": 450, "x": 50, "group": 2, "id": "o9", "name": "MAXIMUM (opcode=5)"}, {"y": 500, "x": 50, "group": 2, "id": "o10", "name": "MAX_POOL_2D (opcode=2)"}, {"y": 550, "x": 50, "group": 2, "id": "o11", "name": "PAD (opcode=4)"}, {"y": 600, "x": 50, "group": 2, "id": "o12", "name": "DEQUANTIZE (opcode=1)"}, {"y": 650, "x": 50, "group": 2, "id": "o13", "name": "CONV_2D (opcode=0)"}, {"y": 700, "x": 50, "group": 2, "id": "o14", "name": "MUL (opcode=3)"}, {"y": 750, "x": 50, "group": 2, "id": "o15", "name": "MAXIMUM (opcode=5)"}, {"y": 800, "x": 50, "group": 2, "id": "o16", "name": "MAX_POOL_2D (opcode=2)"}, {"y": 850, "x": 50, "group": 2, "id": "o17", "name": "PAD (opcode=4)"}, {"y": 900, "x": 50, "group": 2, "id": "o18", "name": "DEQUANTIZE (opcode=1)"}, {"y": 950, "x": 50, "group": 2, "id": "o19", "name": "CONV_2D (opcode=0)"}, {"y": 1000, "x": 50, "group": 2, "id": "o20", "name": "MUL (opcode=3)"}, {"y": 1050, "x": 50, "group": 2, "id": "o21", "name": "MAXIMUM (opcode=5)"}, {"y": 1100, "x": 50, "group": 2, "id": "o22", "name": "MAX_POOL_2D (opcode=2)"}, {"y": 1150, "x": 50, "group": 2, "id": "o23", "name": "PAD (opcode=4)"}, {"y": 1200, "x": 50, "group": 2, "id": "o24", "name": "DEQUANTIZE (opcode=1)"}, {"y": 1250, "x": 50, "group": 2, "id": "o25", "name": "CONV_2D (opcode=0)"}, {"y": 1300, "x": 50, "group": 2, "id": "o26", "name": "MUL (opcode=3)"}, {"y": 1350, "x": 50, "group": 2, "id": "o27", "name": "MAXIMUM (opcode=5)"}, {"y": 1400, "x": 50, "group": 2, "id": "o28", "name": "MAX_POOL_2D (opcode=2)"}, {"y": 1450, "x": 50, "group": 2, "id": "o29", "name": "PAD (opcode=4)"}, {"y": 1500, "x": 50, "group": 2, "id": "o30", "name": "DEQUANTIZE (opcode=1)"}, {"y": 1550, "x": 50, "group": 2, "id": "o31", "name": "CONV_2D (opcode=0)"}, {"y": 1600, "x": 50, "group": 2, "id": "o32", "name": "MUL (opcode=3)"}, {"y": 1650, "x": 50, "group": 2, "id": "o33", "name": "MAXIMUM (opcode=5)"}, {"y": 1700, "x": 50, "group": 2, "id": "o34", "name": "MAX_POOL_2D (opcode=2)"}, {"y": 1750, "x": 50, "group": 2, "id": "o35", "name": "PAD (opcode=4)"}, {"y": 1800, "x": 50, "group": 2, "id": "o36", "name": "DEQUANTIZE (opcode=1)"}, {"y": 1850, "x": 50, "group": 2, "id": "o37", "name": "CONV_2D (opcode=0)"}, {"y": 1900, "x": 50, "group": 2, "id": "o38", "name": "MUL (opcode=3)"}, {"y": 1950, "x": 50, "group": 2, "id": "o39", "name": "MAXIMUM (opcode=5)"}, {"y": 2000, "x": 50, "group": 2, "id": "o40", "name": "PAD (opcode=4)"}, {"y": 2050, "x": 50, "group": 2, "id": "o41", "name": "DEQUANTIZE (opcode=1)"}, {"y": 2100, "x": 50, "group": 2, "id": "o42", "name": "CONV_2D (opcode=0)"}, {"y": 2150, "x": 50, "group": 2, "id": "o43", "name": "MUL (opcode=3)"}, {"y": 2200, "x": 50, "group": 2, "id": "o44", "name": "MAXIMUM (opcode=5)"}, {"y": 2250, "x": 50, "group": 2, "id": "o45", "name": "PAD (opcode=4)"}, {"y": 2300, "x": 50, "group": 2, "id": "o46", "name": "DEQUANTIZE (opcode=1)"}, {"y": 2350, "x": 50, "group": 2, "id": "o47", "name": "CONV_2D (opcode=0)"}, {"y": 48, "x": 2, "group": 1, "id": "t0", "name": " (0)"}, {"y": [50, 25.0], "x": 2, "group": 1, "id": "t1", "name": "0-convolutional/filter (1)"}, {"y": [50, 75.0], "x": 2, "group": 1, "id": "t2", "name": "0-convolutional_bias (2)"}, {"y": [200, -25.0], "x": 2, "group": 1, "id": "t3", "name": "1-leaky (3)"}, {"y": [1100, -25.0], "x": 2, "group": 1, "id": "t4", "name": "10-leaky (4)"}, {"y": [1150, -25.0], "x": 2, "group": 1, "id": "t5", "name": "11-maxpool (5)"}, {"y": [1200, -25.0], "x": 2, "group": 1, "id": "t6", "name": "12-convolutional/filter (6)"}, {"y": [1250, 25.0], "x": 2, "group": 1, "id": "t7", "name": "12-convolutional/filter_dequantized (7)"}, {"y": [1250, 75.0], "x": 2, "group": 1, "id": "t8", "name": "12-convolutional_bias (8)"}, {"y": [1400, -25.0], "x": 2, "group": 1, "id": "t9", "name": "13-leaky (9)"}, {"y": [1450, -25.0], "x": 2, "group": 1, "id": "t10", "name": "14-maxpool (10)"}, {"y": [1500, -25.0], "x": 2, "group": 1, "id": "t11", "name": "15-convolutional/filter (11)"}, {"y": [1550, 25.0], "x": 2, "group": 1, "id": "t12", "name": "15-convolutional/filter_dequantized (12)"}, {"y": [1550, 75.0], "x": 2, "group": 1, "id": "t13", "name": "15-convolutional_bias (13)"}, {"y": [1700, -25.0], "x": 2, "group": 1, "id": "t14", "name": "16-leaky (14)"}, {"y": [1750, -25.0], "x": 2, "group": 1, "id": "t15", "name": "17-maxpool (15)"}, {"y": [1800, -25.0], "x": 2, "group": 1, "id": "t16", "name": "18-convolutional/filter (16)"}, {"y": [1850, 25.0], "x": 2, "group": 1, "id": "t17", "name": "18-convolutional/filter_dequantized (17)"}, {"y": [1850, 75.0], "x": 2, "group": 1, "id": "t18", "name": "18-convolutional_bias (18)"}, {"y": [2000, -25.0], "x": 2, "group": 1, "id": "t19", "name": "19-leaky (19)"}, {"y": [250, -25.0], "x": 2, "group": 1, "id": "t20", "name": "2-maxpool (20)"}, {"y": [2050, -25.0], "x": 2, "group": 1, "id": "t21", "name": "20-convolutional/filter (21)"}, {"y": [2100, 25.0], "x": 2, "group": 1, "id": "t22", "name": "20-convolutional/filter_dequantized (22)"}, {"y": [2100, 75.0], "x": 2, "group": 1, "id": "t23", "name": "20-convolutional_bias (23)"}, {"y": [2250, -25.0], "x": 2, "group": 1, "id": "t24", "name": "21-leaky (24)"}, {"y": [2300, -25.0], "x": 2, "group": 1, "id": "t25", "name": "22-convolutional/filter (25)"}, {"y": [2350, 25.0], "x": 2, "group": 1, "id": "t26", "name": "22-convolutional/filter_dequantized (26)"}, {"y": [2350, 75.0], "x": 2, "group": 1, "id": "t27", "name": "22-convolutional_bias (27)"}, {"y": [300, -25.0], "x": 2, "group": 1, "id": "t28", "name": "3-convolutional/filter (28)"}, {"y": [350, 25.0], "x": 2, "group": 1, "id": "t29", "name": "3-convolutional/filter_dequantized (29)"}, {"y": [350, 75.0], "x": 2, "group": 1, "id": "t30", "name": "3-convolutional_bias (30)"}, {"y": [500, -25.0], "x": 2, "group": 1, "id": "t31", "name": "4-leaky (31)"}, {"y": [550, -25.0], "x": 2, "group": 1, "id": "t32", "name": "5-maxpool (32)"}, {"y": [600, -25.0], "x": 2, "group": 1, "id": "t33", "name": "6-convolutional/filter (33)"}, {"y": [650, 25.0], "x": 2, "group": 1, "id": "t34", "name": "6-convolutional/filter_dequantized (34)"}, {"y": [650, 75.0], "x": 2, "group": 1, "id": "t35", "name": "6-convolutional_bias (35)"}, {"y": [800, -25.0], "x": 2, "group": 1, "id": "t36", "name": "7-leaky (36)"}, {"y": [850, -25.0], "x": 2, "group": 1, "id": "t37", "name": "8-maxpool (37)"}, {"y": [900, -25.0], "x": 2, "group": 1, "id": "t38", "name": "9-convolutional/filter (38)"}, {"y": [950, 25.0], "x": 2, "group": 1, "id": "t39", "name": "9-convolutional/filter_dequantized (39)"}, {"y": [950, 75.0], "x": 2, "group": 1, "id": "t40", "name": "9-convolutional_bias (40)"}, {"y": [100, 25.0], "x": 2, "group": 1, "id": "t41", "name": "BiasAdd (41)"}, {"y": [400, 25.0], "x": 2, "group": 1, "id": "t42", "name": "BiasAdd_1 (42)"}, {"y": [700, 25.0], "x": 2, "group": 1, "id": "t43", "name": "BiasAdd_2 (43)"}, {"y": [1000, 25.0], "x": 2, "group": 1, "id": "t44", "name": "BiasAdd_3 (44)"}, {"y": [1300, 25.0], "x": 2, "group": 1, "id": "t45", "name": "BiasAdd_4 (45)"}, {"y": [1600, 25.0], "x": 2, "group": 1, "id": "t46", "name": "BiasAdd_5 (46)"}, {"y": [1900, 25.0], "x": 2, "group": 1, "id": "t47", "name": "BiasAdd_6 (47)"}, {"y": [2150, 25.0], "x": 2, "group": 1, "id": "t48", "name": "BiasAdd_7 (48)"}, {"y": [50, -25.0], "x": 2, "group": 1, "id": "t49", "name": "Pad (49)"}, {"y": [0, 25.0], "x": 2, "group": 1, "id": "t50", "name": "Pad/paddings (50)"}, {"y": [350, -25.0], "x": 2, "group": 1, "id": "t51", "name": "Pad_1 (51)"}, {"y": [250, 25.0], "x": 2, "group": 1, "id": "t52", "name": "Pad_1/paddings (52)"}, {"y": [650, -25.0], "x": 2, "group": 1, "id": "t53", "name": "Pad_2 (53)"}, {"y": [550, 25.0], "x": 2, "group": 1, "id": "t54", "name": "Pad_2/paddings (54)"}, {"y": [950, -25.0], "x": 2, "group": 1, "id": "t55", "name": "Pad_3 (55)"}, {"y": [850, 25.0], "x": 2, "group": 1, "id": "t56", "name": "Pad_3/paddings (56)"}, {"y": [1250, -25.0], "x": 2, "group": 1, "id": "t57", "name": "Pad_4 (57)"}, {"y": [1150, 25.0], "x": 2, "group": 1, "id": "t58", "name": "Pad_4/paddings (58)"}, {"y": [1550, -25.0], "x": 2, "group": 1, "id": "t59", "name": "Pad_5 (59)"}, {"y": [1450, 25.0], "x": 2, "group": 1, "id": "t60", "name": "Pad_5/paddings (60)"}, {"y": [1850, -25.0], "x": 2, "group": 1, "id": "t61", "name": "Pad_6 (61)"}, {"y": [1750, 25.0], "x": 2, "group": 1, "id": "t62", "name": "Pad_6/paddings (62)"}, {"y": [2100, -25.0], "x": 2, "group": 1, "id": "t63", "name": "Pad_7 (63)"}, {"y": [2000, 25.0], "x": 2, "group": 1, "id": "t64", "name": "Pad_7/paddings (64)"}, {"y": [2350, -25.0], "x": 2, "group": 1, "id": "t65", "name": "Pad_8 (65)"}, {"y": [2250, 25.0], "x": 2, "group": 1, "id": "t66", "name": "Pad_8/paddings (66)"}, {"y": [0, -25.0], "x": 2, "group": 1, "id": "t67", "name": "input (67)"}, {"y": [150, -25.0], "x": 2, "group": 1, "id": "t68", "name": "mul_1 (68)"}, {"y": [100, -25.0], "x": 2, "group": 1, "id": "t69", "name": "mul_1/x (69)"}, {"y": [1650, -25.0], "x": 2, "group": 1, "id": "t70", "name": "mul_11 (70)"}, {"y": [1600, -25.0], "x": 2, "group": 1, "id": "t71", "name": "mul_11/x (71)"}, {"y": [1950, -25.0], "x": 2, "group": 1, "id": "t72", "name": "mul_13 (72)"}, {"y": [1900, -25.0], "x": 2, "group": 1, "id": "t73", "name": "mul_13/x (73)"}, {"y": [2200, -25.0], "x": 2, "group": 1, "id": "t74", "name": "mul_15 (74)"}, {"y": [2150, -25.0], "x": 2, "group": 1, "id": "t75", "name": "mul_15/x (75)"}, {"y": [450, -25.0], "x": 2, "group": 1, "id": "t76", "name": "mul_3 (76)"}, {"y": [400, -25.0], "x": 2, "group": 1, "id": "t77", "name": "mul_3/x (77)"}, {"y": [750, -25.0], "x": 2, "group": 1, "id": "t78", "name": "mul_5 (78)"}, {"y": [700, -25.0], "x": 2, "group": 1, "id": "t79", "name": "mul_5/x (79)"}, {"y": [1050, -25.0], "x": 2, "group": 1, "id": "t80", "name": "mul_7 (80)"}, {"y": [1000, -25.0], "x": 2, "group": 1, "id": "t81", "name": "mul_7/x (81)"}, {"y": [1350, -25.0], "x": 2, "group": 1, "id": "t82", "name": "mul_9 (82)"}, {"y": [1300, -25.0], "x": 2, "group": 1, "id": "t83", "name": "mul_9/x (83)"}, {"y": 48, "x": 2, "group": 1, "id": "t84", "name": "output (84)"}], "edges": [{"source": "t67", "target": "o0"}, {"source": "t50", "target": "o0"}, {"source": "o0", "target": "t49"}, {"source": "t49", "target": "o1"}, {"source": "t1", "target": "o1"}, {"source": "t2", "target": "o1"}, {"source": "o1", "target": "t41"}, {"source": "t69", "target": "o2"}, {"source": "t41", "target": "o2"}, {"source": "o2", "target": "t68"}, {"source": "t68", "target": "o3"}, {"source": "t41", "target": "o3"}, {"source": "o3", "target": "t3"}, {"source": "t3", "target": "o4"}, {"source": "o4", "target": "t20"}, {"source": "t20", "target": "o5"}, {"source": "t52", "target": "o5"}, {"source": "o5", "target": "t51"}, {"source": "t28", "target": "o6"}, {"source": "o6", "target": "t29"}, {"source": "t51", "target": "o7"}, {"source": "t29", "target": "o7"}, {"source": "t30", "target": "o7"}, {"source": "o7", "target": "t42"}, {"source": "t77", "target": "o8"}, {"source": "t42", "target": "o8"}, {"source": "o8", "target": "t76"}, {"source": "t76", "target": "o9"}, {"source": "t42", "target": "o9"}, {"source": "o9", "target": "t31"}, {"source": "t31", "target": "o10"}, {"source": "o10", "target": "t32"}, {"source": "t32", "target": "o11"}, {"source": "t54", "target": "o11"}, {"source": "o11", "target": "t53"}, {"source": "t33", "target": "o12"}, {"source": "o12", "target": "t34"}, {"source": "t53", "target": "o13"}, {"source": "t34", "target": "o13"}, {"source": "t35", "target": "o13"}, {"source": "o13", "target": "t43"}, {"source": "t79", "target": "o14"}, {"source": "t43", "target": "o14"}, {"source": "o14", "target": "t78"}, {"source": "t78", "target": "o15"}, {"source": "t43", "target": "o15"}, {"source": "o15", "target": "t36"}, {"source": "t36", "target": "o16"}, {"source": "o16", "target": "t37"}, {"source": "t37", "target": "o17"}, {"source": "t56", "target": "o17"}, {"source": "o17", "target": "t55"}, {"source": "t38", "target": "o18"}, {"source": "o18", "target": "t39"}, {"source": "t55", "target": "o19"}, {"source": "t39", "target": "o19"}, {"source": "t40", "target": "o19"}, {"source": "o19", "target": "t44"}, {"source": "t81", "target": "o20"}, {"source": "t44", "target": "o20"}, {"source": "o20", "target": "t80"}, {"source": "t80", "target": "o21"}, {"source": "t44", "target": "o21"}, {"source": "o21", "target": "t4"}, {"source": "t4", "target": "o22"}, {"source": "o22", "target": "t5"}, {"source": "t5", "target": "o23"}, {"source": "t58", "target": "o23"}, {"source": "o23", "target": "t57"}, {"source": "t6", "target": "o24"}, {"source": "o24", "target": "t7"}, {"source": "t57", "target": "o25"}, {"source": "t7", "target": "o25"}, {"source": "t8", "target": "o25"}, {"source": "o25", "target": "t45"}, {"source": "t83", "target": "o26"}, {"source": "t45", "target": "o26"}, {"source": "o26", "target": "t82"}, {"source": "t82", "target": "o27"}, {"source": "t45", "target": "o27"}, {"source": "o27", "target": "t9"}, {"source": "t9", "target": "o28"}, {"source": "o28", "target": "t10"}, {"source": "t10", "target": "o29"}, {"source": "t60", "target": "o29"}, {"source": "o29", "target": "t59"}, {"source": "t11", "target": "o30"}, {"source": "o30", "target": "t12"}, {"source": "t59", "target": "o31"}, {"source": "t12", "target": "o31"}, {"source": "t13", "target": "o31"}, {"source": "o31", "target": "t46"}, {"source": "t71", "target": "o32"}, {"source": "t46", "target": "o32"}, {"source": "o32", "target": "t70"}, {"source": "t70", "target": "o33"}, {"source": "t46", "target": "o33"}, {"source": "o33", "target": "t14"}, {"source": "t14", "target": "o34"}, {"source": "o34", "target": "t15"}, {"source": "t15", "target": "o35"}, {"source": "t62", "target": "o35"}, {"source": "o35", "target": "t61"}, {"source": "t16", "target": "o36"}, {"source": "o36", "target": "t17"}, {"source": "t61", "target": "o37"}, {"source": "t17", "target": "o37"}, {"source": "t18", "target": "o37"}, {"source": "o37", "target": "t47"}, {"source": "t73", "target": "o38"}, {"source": "t47", "target": "o38"}, {"source": "o38", "target": "t72"}, {"source": "t72", "target": "o39"}, {"source": "t47", "target": "o39"}, {"source": "o39", "target": "t19"}, {"source": "t19", "target": "o40"}, {"source": "t64", "target": "o40"}, {"source": "o40", "target": "t63"}, {"source": "t21", "target": "o41"}, {"source": "o41", "target": "t22"}, {"source": "t63", "target": "o42"}, {"source": "t22", "target": "o42"}, {"source": "t23", "target": "o42"}, {"source": "o42", "target": "t48"}, {"source": "t75", "target": "o43"}, {"source": "t48", "target": "o43"}, {"source": "o43", "target": "t74"}, {"source": "t74", "target": "o44"}, {"source": "t48", "target": "o44"}, {"source": "o44", "target": "t24"}, {"source": "t24", "target": "o45"}, {"source": "t66", "target": "o45"}, {"source": "o45", "target": "t65"}, {"source": "t25", "target": "o46"}, {"source": "o46", "target": "t26"}, {"source": "t65", "target": "o47"}, {"source": "t26", "target": "o47"}, {"source": "t27", "target": "o47"}, {"source": "o47", "target": "t84"}]};
+
+    var svg = d3.select("#subgraph0");
+    var width = svg.attr("width");
+    var height = svg.attr("height");
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    var simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().id(function(d) {return d.id;}))
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(0.5 * width, 0.5 * height));
+
+
+    function buildGraph() {
+      var edge = svg.append("g").attr("class", "edges").selectAll("line")
+        .data(graph.edges).enter().append("line")
+      // Make the node group
+      var node = svg.selectAll(".nodes")
+        .data(graph.nodes)
+        .enter().append("g")
+        .attr("class", "nodes")
+          .call(d3.drag()
+              .on("start", function(d) {
+                if(!d3.event.active) simulation.alphaTarget(1.0).restart();
+                d.fx = d.x;d.fy = d.y;
+              })
+              .on("drag", function(d) {
+                d.fx = d3.event.x; d.fy = d3.event.y;
+              })
+              .on("end", function(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = d.fy = null;
+              }));
+      // Within the group, draw a circle for the node position and text
+      // on the side.
+      node.append("circle")
+          .attr("r", "5px")
+          .attr("fill", function(d) { return color(d.group); })
+      node.append("text")
+          .attr("dx", 8).attr("dy", 5).text(function(d) { return d.name; });
+      // Setup force parameters and update position callback
+      simulation.nodes(graph.nodes).on("tick", forceSimulationUpdated);
+      simulation.force("link").links(graph.edges);
+
+      function forceSimulationUpdated() {
+        // Update edges.
+        edge.attr("x1", function(d) {return d.source.x;})
+            .attr("y1", function(d) {return d.source.y;})
+            .attr("x2", function(d) {return d.target.x;})
+            .attr("y2", function(d) {return d.target.y;});
+        // Update node positions
+        node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+      }
+    }
+  buildGraph()
+</script>
+</div><h2>Buffers</h2>
+<table><tr>
+<tr>
+<th>index</th><th>data</th></tr>
+<tr>
+<td>0</td><td>--</td>
+</tr>
+<tr>
+<td>1</td><td>--</td>
+</tr>
+<tr>
+<td>2</td><td>--</td>
+</tr>
+<tr>
+<td>3</td><td>--</td>
+</tr>
+<tr>
+<td>4</td><td>--</td>
+</tr>
+<tr>
+<td>5</td><td>--</td>
+</tr>
+<tr>
+<td>6</td><td>200 bytes</td>
+</tr>
+<tr>
+<td>7</td><td>2048 bytes</td>
+</tr>
+<tr>
+<td>8</td><td>2048 bytes</td>
+</tr>
+<tr>
+<td>9</td><td>1024 bytes</td>
+</tr>
+<tr>
+<td>10</td><td>512 bytes</td>
+</tr>
+<tr>
+<td>11</td><td>128 bytes</td>
+</tr>
+<tr>
+<td>12</td><td>--</td>
+</tr>
+<tr>
+<td>13</td><td>--</td>
+</tr>
+<tr>
+<td>14</td><td>--</td>
+</tr>
+<tr>
+<td>15</td><td>--</td>
+</tr>
+<tr>
+<td>16</td><td>--</td>
+</tr>
+<tr>
+<td>17</td><td>--</td>
+</tr>
+<tr>
+<td>18</td><td>--</td>
+</tr>
+<tr>
+<td>19</td><td>--</td>
+</tr>
+<tr>
+<td>20</td><td>--</td>
+</tr>
+<tr>
+<td>21</td><td>--</td>
+</tr>
+<tr>
+<td>22</td><td>--</td>
+</tr>
+<tr>
+<td>23</td><td>--</td>
+</tr>
+<tr>
+<td>24</td><td>--</td>
+</tr>
+<tr>
+<td>25</td><td>--</td>
+</tr>
+<tr>
+<td>26</td><td>--</td>
+</tr>
+<tr>
+<td>27</td><td>--</td>
+</tr>
+<tr>
+<td>28</td><td>--</td>
+</tr>
+<tr>
+<td>29</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>30</td><td>--</td>
+</tr>
+<tr>
+<td>31</td><td>--</td>
+</tr>
+<tr>
+<td>32</td><td>--</td>
+</tr>
+<tr>
+<td>33</td><td>--</td>
+</tr>
+<tr>
+<td>34</td><td>--</td>
+</tr>
+<tr>
+<td>35</td><td>--</td>
+</tr>
+<tr>
+<td>36</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>37</td><td>294912 bytes</td>
+</tr>
+<tr>
+<td>38</td><td>--</td>
+</tr>
+<tr>
+<td>39</td><td>--</td>
+</tr>
+<tr>
+<td>40</td><td>--</td>
+</tr>
+<tr>
+<td>41</td><td>--</td>
+</tr>
+<tr>
+<td>42</td><td>--</td>
+</tr>
+<tr>
+<td>43</td><td>--</td>
+</tr>
+<tr>
+<td>44</td><td>--</td>
+</tr>
+<tr>
+<td>45</td><td>--</td>
+</tr>
+<tr>
+<td>46</td><td>--</td>
+</tr>
+<tr>
+<td>47</td><td>--</td>
+</tr>
+<tr>
+<td>48</td><td>1179648 bytes</td>
+</tr>
+<tr>
+<td>49</td><td>25600 bytes</td>
+</tr>
+<tr>
+<td>50</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>51</td><td>--</td>
+</tr>
+<tr>
+<td>52</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>53</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>54</td><td>--</td>
+</tr>
+<tr>
+<td>55</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>56</td><td>256 bytes</td>
+</tr>
+<tr>
+<td>57</td><td>4608 bytes</td>
+</tr>
+<tr>
+<td>58</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>59</td><td>--</td>
+</tr>
+<tr>
+<td>60</td><td>73728 bytes</td>
+</tr>
+<tr>
+<td>61</td><td>--</td>
+</tr>
+<tr>
+<td>62</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>63</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>64</td><td>--</td>
+</tr>
+<tr>
+<td>65</td><td>--</td>
+</tr>
+<tr>
+<td>66</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>67</td><td>--</td>
+</tr>
+<tr>
+<td>68</td><td>--</td>
+</tr>
+<tr>
+<td>69</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>70</td><td>4718592 bytes</td>
+</tr>
+<tr>
+<td>71</td><td>4718592 bytes</td>
+</tr>
+<tr>
+<td>72</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>73</td><td>--</td>
+</tr>
+<tr>
+<td>74</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>75</td><td>--</td>
+</tr>
+<tr>
+<td>76</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>77</td><td>4096 bytes</td>
+</tr>
+<tr>
+<td>78</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>79</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>80</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>81</td><td>18432 bytes</td>
+</tr>
+<tr>
+<td>82</td><td>--</td>
+</tr>
+<tr>
+<td>83</td><td>--</td>
+</tr>
+<tr>
+<td>84</td><td>64 bytes</td>
+</tr>
+<tr>
+<td>85</td><td>1728 bytes</td>
+</tr>
+</table>
+<h2>Operator Codes</h2>
+<table><tr>
+<tr>
+<th>index</th><th>builtin_code</th></tr>
+<tr>
+<td>0</td><td>CONV_2D</td>
+</tr>
+<tr>
+<td>1</td><td>DEQUANTIZE</td>
+</tr>
+<tr>
+<td>2</td><td>MAX_POOL_2D</td>
+</tr>
+<tr>
+<td>3</td><td>MUL</td>
+</tr>
+<tr>
+<td>4</td><td>PAD</td>
+</tr>
+<tr>
+<td>5</td><td>MAXIMUM</td>
+</tr>
+</table>
+</body></html>
