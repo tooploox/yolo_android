@@ -19,9 +19,13 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         setContentView(R.layout.activity_main)
         injection.attachCamera(this, cvPreview)
         super.onCreate(savedInstanceState)
-        requestPermissions()
         cvPreview.setOnClickListener { presenter.takePhoto() }
         btnTryAgain.setOnClickListener { presenter.retry() }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        checkPermissions()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
@@ -30,7 +34,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         presenter.startPreview()
     }
 
-    private fun requestPermissions() {
+    private fun checkPermissions() {
         val perms = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
         if (EasyPermissions.hasPermissions(this, *perms)) {
             presenter.startPreview()
@@ -41,8 +45,8 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
     }
 
     override fun showResult(result: List<Detection>) {
-        NavigatorImpl().showResults(result, this)
-        finish()
+        injection.navigator.showResults(result, this)
+        presenter.retry()
     }
 
     override fun showProgress() {

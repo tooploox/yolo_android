@@ -16,7 +16,7 @@ class ResultActivity : BaseActivity<ResultPresenter>(), ResultView {
 
     companion object {
         const val EXTRA_KEY = "extra_detections"
-        private const val COLUMN_COUNT = 3
+        private const val COLUMN_COUNT = 4
 
         fun getStartIntent(detection: List<Detection>, context: Context): Intent =
                 Intent(context, ResultActivity::class.java).apply {
@@ -31,6 +31,8 @@ class ResultActivity : BaseActivity<ResultPresenter>(), ResultView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
         val results = intent.extras.get(EXTRA_KEY) as List<Detection>
+
+        ibBack.setOnClickListener { onBackPressed() }
 
         ivSourceImage.setImageBitmap(BitmapStorageImpl().retreive())
         rvCards.adapter = DetectionsAdapter().apply { detections = results }
