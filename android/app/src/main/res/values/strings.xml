@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Poker ML</string>
+    <string name="touch_screen_to_take_a_photo">Touch screen to take a photo</string>
+    <string name="recognizing_image">Recognizing image</string>
+    <string name="sorry_not_able_to_recognize_the_cards">Sorry, not able to recognize the cards</string>
+    <string name="try_again">Try again</string>
+    <string name="recognition_accuracy">%d %%</string>
+    <string name="recognized_cards">Recognized cards</string>
+    <string name="accuracy_level">Accuracy level</string>
+</resources>

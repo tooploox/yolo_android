@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+
+    <color name="colorAccent">@color/yellow_sea</color>
+    <color name="primary_text">@color/tundora</color>
+    <color name="text_highlight">@color/yellow_sea</color>
+
+    `<color name="recognition_good">@color/mountain_meadow</color>
+    `<color name="recognition_satisfactory">@color/key_lime_pie</color>
+    `<color name="recognition_borderline">@color/hot_cinnamon</color>
+
+</resources>
