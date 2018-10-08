@@ -6,6 +6,7 @@ import android.content.Context
 class MlApp : Application() {
 
     lateinit var injection: Injection
+
     override fun onCreate() {
         super.onCreate()
         injection = Injection(this)

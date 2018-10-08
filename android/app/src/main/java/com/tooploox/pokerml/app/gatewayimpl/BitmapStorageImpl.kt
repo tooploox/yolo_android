@@ -1,14 +1,12 @@
 package com.tooploox.pokerml.app.gatewayimpl
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Environment
 import com.tooploox.pokerml.domain.gateway.StoredBitmapProvider
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import android.graphics.BitmapFactory
-
-
 
 class BitmapStorageImpl : StoredBitmapProvider {
 
@@ -19,13 +17,13 @@ class BitmapStorageImpl : StoredBitmapProvider {
         try {
             out = FileOutputStream(path)
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
-        } catch (e: Exception) {
-            e.printStackTrace()
+        } catch (exception: Exception) {
+            exception.printStackTrace()
         } finally {
             try {
                 out?.close()
-            } catch (e: IOException) {
-                e.printStackTrace()
+            } catch (ioException: IOException) {
+                ioException.printStackTrace()
             }
         }
     }

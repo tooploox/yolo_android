@@ -24,8 +24,7 @@ class ResultActivity : BaseActivity<ResultPresenter>(), ResultView {
                 }
     }
 
-    override fun createPresenter(): ResultPresenter =
-            ResultPresenterImpl(this)
+    override fun createPresenter(): ResultPresenter = ResultPresenterImpl(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

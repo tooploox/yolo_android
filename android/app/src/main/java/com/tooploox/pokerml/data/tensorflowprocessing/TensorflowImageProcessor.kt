@@ -32,8 +32,10 @@ class TensorflowImageProcessor(
                     * 416   // Input image height
                     * 3     // Pixel size
                     * 4)    // Bytes per channel
+
     private val intValues = IntArray(416 * 416)
 
+    // Tensorflow outputs a 4 dimensional array. For some reason it complains with nested FloatArrays
     private val output: Array<Array<Array<FloatArray>>> = Array(1) { Array(13) { Array(13) { FloatArray(285) } } }
 
     init {
@@ -77,6 +79,8 @@ class TensorflowImageProcessor(
     }
 
     private fun processOutput(data: Array<Array<Array<FloatArray>>>): Map<Int, Float> {
+        // A good article to put the math into words can be fount at: https://hackernoon.com/understanding-yolo-f5a74bbc7967
+
         val output = data[0] //output is now 13x13x285
         val flatOutput = mutableListOf<Float>()
         output.forEach { flatOutput.addAll(it.flatten()) }

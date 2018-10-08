@@ -35,16 +35,16 @@
     <ProgressBar
         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
         android:id="@+id/pbAccuracy"
-        android:layout_marginTop="4dp"
         android:layout_width="0dp"
         android:layout_height="5dp"
+        android:layout_marginTop="4dp"
         android:max="100"
+        android:progressDrawable="@drawable/progress_background"
         app:layout_constraintLeft_toLeftOf="@id/ivCardBackground"
         app:layout_constraintRight_toRightOf="@id/ivCardBackground"
         app:layout_constraintTop_toBottomOf="@id/ivCardBackground"
         app:layout_constraintBottom_toTopOf="@id/tvAccuracy"
         tools:progress="80"
-        android:progressDrawable="@drawable/progress_background"
         />
 
     <TextView
@@ -52,7 +52,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="80%"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -60,6 +59,7 @@
         app:layout_constraintRight_toRightOf="@id/ivCardBackground"
         app:layout_constraintTop_toBottomOf="@id/pbAccuracy"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="80%"
         />
 
 </merge>
