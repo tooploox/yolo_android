@@ -2,6 +2,7 @@ package com.tooploox.pokerml.app.photo
 
 import com.tooploox.pokerml.app.Injection
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 class MainPresenterImpl(
@@ -10,18 +11,19 @@ class MainPresenterImpl(
 ) : MainPresenter {
 
     var isProcessing = false
+    var disposable: Disposable? = null
 
     override fun viewVisible() = Unit
 
-    override fun startPreview() {
+    override fun onPermissionsGranted() {
         injection.openCameraUsecase.execute().subscribe()
     }
 
-    override fun takePhoto() {
+    override fun takePhotoClicked() {
         if (!isProcessing) {
             isProcessing = true
             view.showProgress()
-            injection.recognizeImageUsecase.execute()
+            disposable = injection.recognizeImageUsecase.execute()
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
@@ -41,11 +43,12 @@ class MainPresenterImpl(
         }
     }
 
-    override fun retry() {
+    override fun retryClicked() {
         view.resetView()
     }
 
     override fun viewHidden() {
+        disposable?.dispose()
         injection.closeCameraUsecase.execute().subscribe()
     }
 

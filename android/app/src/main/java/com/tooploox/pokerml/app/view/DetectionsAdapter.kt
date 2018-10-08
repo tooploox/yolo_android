@@ -16,9 +16,9 @@ class DetectionsAdapter() : RecyclerView.Adapter<DetectionsAdapter.ViewHolder>()
     override fun getItemCount(): Int = detections?.size ?: 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        (holder.view as PlayingCardView).displayDetection(detections!![position])
+        holder.view.displayDetection(detections!![position])
     }
 
-    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+    class ViewHolder(val view: PlayingCardView) : RecyclerView.ViewHolder(view)
 
 }

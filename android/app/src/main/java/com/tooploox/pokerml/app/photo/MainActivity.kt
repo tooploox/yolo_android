@@ -6,7 +6,6 @@ import android.view.View
 import com.tooploox.pokerml.R
 import com.tooploox.pokerml.app.base.BaseActivity
 import com.tooploox.pokerml.app.injection
-import com.tooploox.pokerml.app.navigation.NavigatorImpl
 import com.tooploox.pokerml.domain.entity.Detection
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
@@ -19,8 +18,8 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         setContentView(R.layout.activity_main)
         injection.attachCamera(this, cvPreview)
         super.onCreate(savedInstanceState)
-        cvPreview.setOnClickListener { presenter.takePhoto() }
-        btnTryAgain.setOnClickListener { presenter.retry() }
+        cvPreview.setOnClickListener { presenter.takePhotoClicked() }
+        btnTryAgain.setOnClickListener { presenter.retryClicked() }
     }
 
     override fun onStart() {
@@ -31,13 +30,13 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
-        presenter.startPreview()
+        presenter.onPermissionsGranted()
     }
 
     private fun checkPermissions() {
         val perms = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
         if (EasyPermissions.hasPermissions(this, *perms)) {
-            presenter.startPreview()
+            presenter.onPermissionsGranted()
             return
         } else {
             EasyPermissions.requestPermissions(this, getString(R.string.rationale_ask), 123, *perms)
@@ -46,7 +45,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
 
     override fun showResult(result: List<Detection>) {
         injection.navigator.showResults(result, this)
-        presenter.retry()
+        resetView()
     }
 
     override fun showProgress() {
